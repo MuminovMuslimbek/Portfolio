@@ -1,5 +1,50 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;800;900&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Schoolbell&display=swap);
+@mixin btn() {
+    font-family: "Inter";
+    padding: 15px 35px;
+    cursor: pointer;
+    background: #145E76;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28.8px;
+    color: $color;
+    transition: 0.3s;
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+::selection {
+    background: #849499;
+    color: #043E51;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: #043E51;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #145E76;
+    border-radius: 50px;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #849499;
+    cursor: grab;
+}
+
+ ::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
+}
+
+$color:#fff;
 * {
     margin: 0;
     padding: 0;
@@ -29,6 +74,7 @@ main {
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
+    position: relative;
 }
 
 header {
@@ -36,7 +82,10 @@ header {
     background-image: url(../images/header-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 45px 0 302px 0;
+    padding: 45px 0 200px 0;
+    @media (max-width: 768px) {
+        padding-bottom: 150px;
+    }
 }
 
 .header__container {
@@ -48,22 +97,293 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 36.31px;
+        color: $color;
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        transition: 0.3s;
+        a {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 21.78px;
+            color: #A1B5BB;
+            &:hover {
+                text-decoration: underline #A1B5BB 3px;
+            }
+        }
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+    button {
+        @include btn();
+    }
 }
 
-.logo {
+.navigatia {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+    padding-top: 50px;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+    @media (max-width:480px) {
+        gap: 20px;
+    }
 }
 
-.navigatia {}
+.navigatia-title {
+    @extend .header__container;
+    max-width: 545px;
+    span {
+        max-width: 195px;
+        padding: 16px 30px;
+        background-color: #094556;
+        font-family: "Schoolbell";
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 33.42px;
+        color: $color;
+        border-radius: 30px;
+    }
+    h1 {
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 80px;
+        color: $color;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+    p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28.8px;
+        color: #849499;
+        margin-bottom: 50px;
+    }
+    .navigatia-btn {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        button {
+            @include btn();
+            font-weight: 600;
+            background-color: #FFA63A;
+        }
+        a {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 28.8px;
+            color: #B6CDD4;
+        }
+    }
+    @media (max-width: 979px) {
+        h1 {
+            font-size: 50px;
+            line-height: 70px;
+        }
+        p {
+            max-width: 440px;
+            margin-bottom: 40px;
+        }
+        .navigatia-btn {
+            gap: 15px;
+        }
+    }
+    @media (max-width:768px) {
+        align-items: center;
+    }
+    @media (max-width:480px) {
+        gap: 10px;
+        h1 {
+            max-width: 330px;
+            font-size: 35px;
+            line-height: 40px;
+            margin: 20px 0 10px 0;
+        }
+        p {
+            max-width: 300px;
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}
 
-.navigatia-title {}
+.navigatia-image {
+    max-width: 500px;
+    width: 100%;
+    .person-img {
+        max-width: 500px;
+        width: 100%;
+    }
+    .position-card {
+        max-width: 305px;
+        width: 100%;
+        padding: 20px 28px;
+        position: relative;
+        bottom: 600px;
+        left: -180px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border: 3px solid #ffffff79;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.132);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22.4px;
+            color: $color;
+        }
+        .position-user {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        @media (max-width: 979px) {
+            display: none;
+        }
+    }
+    .posion-user-title {
+        display: flex;
+        flex-direction: column;
+        h5 {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 22.4px;
+            letter-spacing: 0.05em;
+            color: $color;
+        }
+        h6 {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 22.4px;
+            color: #A1B5BB;
+        }
+    }
+}
 
-.navigatia-image {}
+.statistic__container {
+    display: flex;
+    flex-direction: column;
+    gap: 68px;
+    padding: 78px 218px;
+    background-color: $color;
+    border-radius: 30px;
+    margin-top: -161px;
+    box-shadow: 0px 18px 13px -8px rgba(0, 0, 0, 0.38);
+    -webkit-box-shadow: 0px 18px 13px -8px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 0px 18px 13px -8px rgba(0, 0, 0, 0.38);
+    h3 {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 22.4px;
+        color: #265A6A;
+    }
+    .statistic-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .statistic-number {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        h2 {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 22.4px;
+            color: #08546C;
+        }
+        h5 {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 22.4px;
+            color: #08546C;
+        }
+    }
+}
 
-.position-card {}
+.services {
+    padding: 200px 0;
+}
 
-.position-user {}
-
-.posion-user-title {}
+.services__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+        font-family: "Schoolbell";
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 22.4px;
+        color: #265A6A;
+        text-decoration: underline 2px #265A6A;
+    }
+    h2 {
+        max-width: 510px;
+        margin: 30px 0 70px 0;
+        font-size: 45px;
+        font-weight: 600;
+        line-height: 60px;
+        color: #08546C;
+    }
+    .services-bottom {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+    }
+    .services-card {
+        max-width: 300px;
+        width: 100%;
+        padding: 30px 28px 34px 30px;
+        cursor: pointer;
+        -webkit-box-shadow: 0px 11px 33px -4px rgba(0, 0, 0, 0.40);
+        -moz-box-shadow: 0px 11px 33px -4px rgba(0, 0, 0, 0.40);
+        box-shadow: 0px 11px 33px -4px rgba(0, 0, 0, 0.40);
+        transition: 0.3s;
+        &:hover {
+            background-color: #043E51;
+            color: $color;
+        }
+        h3 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 29.05px;
+            color: #0F1221;
+            &:hover {
+                color: $color;
+            }
+        }
+        p {
+            max-width: 300px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 25.6px;
+            color: #696969;
+            &:hover {
+                color: $color;
+            }
+        }
+    }
+}
