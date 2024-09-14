@@ -84,7 +84,7 @@ header {
     background-size: cover;
     padding: 45px 0 200px 0;
     @media (max-width: 768px) {
-        padding-bottom: 150px;
+        padding-bottom: 350px;
     }
 }
 
@@ -280,6 +280,10 @@ header {
     }
 }
 
+.statistic {
+    padding: 0 15px;
+}
+
 .statistic__container {
     display: flex;
     flex-direction: column;
@@ -301,6 +305,10 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 20px;
+        @media (max-width: 555px) {
+            flex-direction: column;
+        }
     }
     .statistic-number {
         display: flex;
@@ -319,11 +327,37 @@ header {
             line-height: 22.4px;
             color: #08546C;
         }
+        @media (max-width:768px) {
+            gap: 20px;
+            h2 {
+                font-size: 35px;
+            }
+            h5 {
+                font-size: 14px;
+            }
+        }
+    }
+    @media (max-width:979px) {
+        padding: 60px 100px;
+    }
+    @media (max-width:768px) {
+        padding: 40px 50px;
+        gap: 50px;
+        align-items: center;
+        h3 {
+            font-size: 20px;
+        }
+    }
+    @media (max-width:555px) {
+        margin-top: -250px;
     }
 }
 
 .services {
     padding: 200px 0;
+    @media (max-width: 979px) {
+        padding: 130px 0;
+    }
 }
 
 .services__container {
@@ -350,6 +384,10 @@ header {
         display: flex;
         justify-content: space-between;
         gap: 18px;
+        @media (max-width: 979px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
     .services-card {
         max-width: 300px;
@@ -384,6 +422,15 @@ header {
             &:hover {
                 color: $color;
             }
+        }
+    }
+    @media (max-width:555px) {
+        h2 {
+            max-width: 280px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 40px;
+            margin-bottom: 20px;
         }
     }
 }
