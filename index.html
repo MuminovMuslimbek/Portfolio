@@ -16,10 +16,27 @@
 </head>
 
 <body>
+    <div class="loader-container" id="loader" style="display: none;">
+        <dotlottie-player src="https://lottie.host/046cd87d-6807-43db-b3cc-d210e3a62b76/jAWOVJTVWK.json"
+            background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay>
+        </dotlottie-player>
+    </div>
+    <div id="loader" class="loader-container" style="display: none;">
+        <div class="loader"></div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>You Are Hired!</h2>
+            <button id="close-modal">Close</button>
+        </div>
+    </div>
     <header>
         <div class="header__container container">
             <div class="header-head">
-                <div class="logo"><img src="images/icons/logo.svg">P.</div>
+                <a href="index.html">
+                    <div class="logo"><img src="images/icons/logo.svg">P.</div>
+                </a>
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
@@ -27,7 +44,7 @@
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Blog</a></li>
                 </ul>
-                <button type="button">Contact</button>
+                <a href="https://goodnes.vercel.app/pages/register.html"> <button type="button">Contact</button></a>
             </div>
             <nav class="navigatia">
                 <div class="navigatia-title">
@@ -36,7 +53,7 @@
                     <p>A Product Design and Visual Designer in SF I”m Specialize in UI/UX, Responsive web design, and
                         visual Development. </p>
                     <div class="navigatia-btn">
-                        <button type="button">Hire Me</button>
+                        <button id="find-food-button" type="button">Hire Me</button>
                         <a href="#">My Work</a>
                     </div>
                 </div>
@@ -111,6 +128,10 @@
             </div>
         </section>
     </main>
+    <script id="loading-none" src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+        type="module"></script>
+    <dotlottie-player id="loading-none" src="https://lottie.host/046cd87d-6807-43db-b3cc-d210e3a62b76/jAWOVJTVWK.json"
+        background="transparent" speed="1" style="width: 500px; height: 500px; " loop autoplay></dotlottie-player>
     <script src="js/app.js"></script>
 
 </body>
