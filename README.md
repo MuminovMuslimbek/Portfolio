@@ -1,1 +1,1 @@
-## Muminov.uz
+## muminov.uz
